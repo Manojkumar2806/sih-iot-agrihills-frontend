@@ -77,6 +77,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   Data Table
                 </button>
               </li>
+              <li>
+                <button 
+                  onClick={() => onNavigate('weather')} 
+                  className="text-gray-400 hover:text-cyan-400 transition-colors"
+                >
+                  Weather
+                </button>
+              </li>
             </ul>
           </div>
 

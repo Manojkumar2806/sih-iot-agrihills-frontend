@@ -7,6 +7,7 @@ import Chatbot from './components/Chatbot';
 import About from './components/About';
 import DataTable from './components/DataTable';
 import Footer from './components/Footer';
+import Weather from './components/wheather';
 import type { SensorData } from './types';
 
 import { fetchSensorData } from './components/test'; // ✅ single fetch
@@ -52,6 +53,8 @@ function App() {
         return <Chatbot sensorData={sensorData} />;
       case 'about':
         return <About />;
+      case 'weather':
+        return <Weather />;
       case 'data':
         return <DataTable sensorData={sensorData} />;
       default:

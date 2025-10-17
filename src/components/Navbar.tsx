@@ -16,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     { id: 'analytics', label: 'Analytics' },   
     { id: 'chatbot', label: 'Chatbot' },
     { id: 'about', label: 'About' },
+    { id: 'weather', label: 'Weather' },
   ];
 
   return (
