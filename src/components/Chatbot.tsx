@@ -34,7 +34,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ sensorData }) => {
   // ✅ Call FastAPI backend
   const fetchBotResponse = async (query: string) => {
     try {
-      const response = await fetch('https://sih-iot-agrihills-ai.onrender.com/api/query', {
+      const response = await fetch('http://localhost:8000/api/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query, n_results: 3 }),

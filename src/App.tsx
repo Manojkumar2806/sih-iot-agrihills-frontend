@@ -35,12 +35,43 @@ function App() {
     };
 
     loadSensorData();
-    const interval = setInterval(loadSensorData, 1000*60); // refresh every 5s
+    const interval = setInterval(loadSensorData, 1000 * 60); // refresh every 5s
 
     return () => {
       isMounted = false;
       clearInterval(interval);
     };
+  }, []);
+
+  // GLOBAL GOOGLE BANNER REMOVAL
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      const banner = document.querySelector('.goog-te-banner-frame');
+      const frame = document.querySelector('.skiptranslate');
+
+      if (banner) {
+        banner.remove();
+        document.body.style.top = '0px';
+        document.body.style.position = 'static';
+      }
+
+      // Remove iframe only if it's the banner, not the widget wrapper (if any)
+      if (frame && frame.tagName === 'IFRAME' && frame.classList.contains('goog-te-banner-frame')) {
+        frame.remove();
+        document.body.style.top = '0px';
+        document.body.style.position = 'static';
+      }
+
+      // Always force body top 0 if Google messes with it
+      if (document.body.style.top !== '0px' && document.body.style.top !== '') {
+        document.body.style.top = '0px';
+        document.body.style.position = 'static';
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
   }, []);
 
   const renderContent = () => {

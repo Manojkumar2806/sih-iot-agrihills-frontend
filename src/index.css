@@ -16,3 +16,28 @@
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
+
+/* GLOBAL GOOGLE TRANSLATE FIXES */
+/* Strictly hide the banner frame */
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Hide other Google popups/balloons */
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Force body back to top */
+body {
+    top: 0 !important;
+    position: static !important;
+    margin-top: 0 !important;
+}

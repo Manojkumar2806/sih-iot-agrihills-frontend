@@ -11,9 +11,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-     { id: 'data', label: 'Data Table' },
+    { id: 'data', label: 'Data Table' },
     { id: 'dashboard', label: 'Dashboard' },
-    { id: 'analytics', label: 'Analytics' },   
+    { id: 'analytics', label: 'Analytics' },
     { id: 'chatbot', label: 'Chatbot' },
     { id: 'about', label: 'About' },
     { id: 'weather', label: 'Weather' },
@@ -40,11 +40,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'bg-cyan-500/20 text-cyan-400 shadow-lg shadow-cyan-500/25'
-                      : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
-                  }`}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                    ? 'bg-cyan-500/20 text-cyan-400 shadow-lg shadow-cyan-500/25'
+                    : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -75,11 +74,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                   onNavigate(item.id);
                   setIsOpen(false);
                 }}
-                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${
-                  activeSection === item.id
-                    ? 'bg-cyan-500/20 text-cyan-400'
-                    : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
-                }`}
+                className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-all duration-300 ${activeSection === item.id
+                  ? 'bg-cyan-500/20 text-cyan-400'
+                  : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
+                  }`}
               >
                 {item.label}
               </button>

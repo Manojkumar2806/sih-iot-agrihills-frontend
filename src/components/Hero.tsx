@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Zap, BarChart3, Shield } from 'lucide-react';
+import Translator from './Translator';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -7,8 +8,13 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
-    <div className="pt-16 min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="pt-16 min-h-screen flex items-center relative overflow-hidden">
+      {/* Absolute positioning for Translator */}
+      <div className="absolute top-24 left-4 md:left-8 z-50">
+        <Translator />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="text-center">
           <div className="mb-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
@@ -28,7 +34,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           </h1>
 
           <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Monitor your connected devices, analyze sensor data, and gain actionable insights 
+            Monitor your connected devices, analyze sensor data, and gain actionable insights
             with our advanced IoT dashboard. Experience the future of intelligent monitoring.
           </p>
 
@@ -55,13 +61,13 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <h3 className="text-xl font-semibold mb-2">Real-Time Analytics</h3>
               <p className="text-gray-400">Monitor sensor data with live charts and interactive visualizations.</p>
             </div>
-            
+
             <div className="p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
               <Shield className="h-12 w-12 text-cyan-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">Firebase Integration</h3>
               <p className="text-gray-400">Secure, scalable data storage with real-time synchronization.</p>
             </div>
-            
+
             <div className="p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/10">
               <Zap className="h-12 w-12 text-cyan-400 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold mb-2">AI Assistant</h3>
