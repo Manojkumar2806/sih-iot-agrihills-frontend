@@ -8,6 +8,8 @@ import About from './components/About';
 import DataTable from './components/DataTable';
 import Footer from './components/Footer';
 import Weather from './components/wheather';
+import MarketPrices from './components/MarketPrices';
+import AgriEye from './components/AgriEye';
 import type { SensorData } from './types';
 
 import { fetchSensorData } from './components/test'; // ✅ single fetch
@@ -88,6 +90,10 @@ function App() {
         return <Weather />;
       case 'data':
         return <DataTable sensorData={sensorData} />;
+      case 'marketPrices':
+        return <MarketPrices />;
+      case 'agriEye':
+        return <AgriEye />;
       default:
         return <Hero onNavigate={setActiveSection} />;
     }
