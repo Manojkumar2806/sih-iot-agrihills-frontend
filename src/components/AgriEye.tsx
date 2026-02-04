@@ -10,6 +10,8 @@ const AgriEye: React.FC = () => {
                 <div className="bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl border border-cyan-500/20">
                     <p className="text-gray-300 text-lg">
                         Advanced agriculture monitoring and analysis tools will be available here soon.
+                        </br>
+                        Comming Soon
                     </p>
                 </div>
             </div>
